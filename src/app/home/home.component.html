@@ -1,0 +1,39 @@
+<app-top-bar></app-top-bar>
+
+
+<div class="container">
+    <h1>Hola Usuario</h1>
+    <p>Este es la página de inicio de la aplicación como prueba técnica para el tipo de cambio, por favor usa los siguientes botones.</p>
+    
+    <div class="row">
+        <div class="col-5">
+            <h4>Monto</h4>
+            <form [formGroup]="clientForm">
+            <input type="text" class="form-control" id="amount" formControlName="amount" >
+
+            <br>
+            <h4>Tipo de cambio</h4>
+            <select class="form-select" id="rate" formControlName="rate" (change)="updateRate()">
+                <option selected value="PEN-USD">De SOLES a DÓLARES</option>
+                <option value="USD-PEN">De DÓLARES a SOLES</option>
+              </select>
+            </form>
+                <br>
+              <div class="btn btn-primary" (click)="calculate()">Enviar</div>
+            <br>
+        </div>
+        <div class="col-7">
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                <h3>A un cambio de</h3>
+                    <h2>{{updateRateConstant}} </h2>
+                  <h2 class="card-title">Conversión</h2>
+                  <h3 class="card-text"> {{convertedAmount}}</h3>
+                 
+                </div>
+              </div>
+        </div>
+    </div>
+    
+    
+</div>

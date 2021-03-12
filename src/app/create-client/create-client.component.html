@@ -1,0 +1,22 @@
+<app-top-bar></app-top-bar>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form [formGroup]="clientForm">
+                <h2>Formulario de inicio de sesión</h2>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" formControlName="email" placeholder="joseduranzrt@gmail.com">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" formControlName="password">
+                </div>
+                <div class="btn btn-primary" (click)="createClient()">Enviar</div>
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
